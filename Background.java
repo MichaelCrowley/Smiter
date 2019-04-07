@@ -1,3 +1,10 @@
+/*
+ *  Author: Michael Crowley
+ *  Date: 4/6/2019
+ * 
+ *  This class displays the background image.
+ */
+
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.Color;
@@ -13,15 +20,10 @@ public class Background extends JPanel{
   public Background(){
     loadImage();
   }
-  public void draw(Graphics2D g2){
-    Rectangle test = new Rectangle(150, 150, 500, 500);
-    g2.setColor(Color.GREEN);
-    g2.fill(test);
-    drawP(g2);
-  }
 
-  private void drawP(Graphics2D g2){
-      g2.drawImage(p, 200, 200, this);
+  //Display images
+  public void draw(Graphics2D g2){
+    g2.drawImage(p, 200, 200, this);
       Toolkit.getDefaultToolkit().sync();
   }
 
