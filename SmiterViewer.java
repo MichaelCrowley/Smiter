@@ -1,3 +1,9 @@
+/*
+ *  Author: Michael Crowley
+ *  Date: 4/6/2019
+ * 
+ *  This class starts the game.
+ */
 import javax.swing.JFrame;
 
 public class SmiterViewer{
