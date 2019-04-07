@@ -8,7 +8,7 @@
 
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
-
+import java.awt.event.KeyAdapter;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
@@ -20,9 +20,11 @@ public class ComponentsHolder extends JComponent implements Runnable{
   private Mirra player = new Mirra();
   private Thread animator;
   private final int DELAY = 100;
+  private KeyAdapter listener = new Controller(player);
   
   public ComponentsHolder() {
     this.setFocusable(true);
+    this.addKeyListener(listener);
   }
 
   //Draw the board
@@ -33,6 +35,7 @@ public class ComponentsHolder extends JComponent implements Runnable{
       player.draw(g2);
     }
 
+  //Do stuff
   public void cycle(){
       player.nextFrame();
   }

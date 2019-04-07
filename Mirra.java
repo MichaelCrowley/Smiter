@@ -29,11 +29,42 @@ public class Mirra extends Character{
     this.hitbox = new Rectangle(currPosition, size);
   }
   
+  public void moveUp(){
+    this.currPosition.y -= speed;
+    currAnimSet = "run";
+  }
+
+  public void moveDown(){
+    this.currPosition.y += speed;
+    currAnimSet = "run";
+  }
+
+  public void moveLeft(){
+    this.currPosition.x -= speed;
+    currAnimSet = "run";
+  }
+
+  public void moveRight(){
+    this.currPosition.x += speed;
+    currAnimSet = "run";
+  }
+
+  public void setIdle(){
+    currAnimSet = "idle";
+  }
+
   public void nextFrame(){
-    if(frameNum < 3)
-      frameNum++;
-    else
-      frameNum = 0;
+    if(currAnimSet == "idle")
+      if(frameNum < 3)
+        frameNum++;
+      else
+        frameNum = 0;
+    
+    if(currAnimSet == "run")
+      if(frameNum < 4)
+        frameNum++;
+      else
+        frameNum = 0;
   }
 
   public void draw(Graphics2D g2){
