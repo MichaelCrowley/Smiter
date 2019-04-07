@@ -10,7 +10,7 @@ public class SmiterViewer{
     frame.setTitle("Smiter");
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-    ObjectsHolder component = new ObjectsHolder();
+    ComponentsHolder component = new ComponentsHolder();
     frame.add(component);
     frame.setVisible(true);
   }

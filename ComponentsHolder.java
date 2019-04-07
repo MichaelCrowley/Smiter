@@ -1,11 +1,18 @@
+/*
+ *  Author: Michael Crowley
+ *  Date: 4/6/2019
+ * 
+ *  This class holds the components like the background and character objects.
+ */
+
 import javax.swing.JComponent;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 
-public class ObjectsHolder extends JComponent{
+public class ComponentsHolder extends JComponent{
   private Background b;
   
-  public ObjectsHolder() {
+  public ComponentsHolder() {
     this.setFocusable(true);
     b = new Background();
   }
