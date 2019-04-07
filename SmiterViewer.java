@@ -13,6 +13,5 @@ public class SmiterViewer{
     ObjectsHolder component = new ObjectsHolder();
     frame.add(component);
     frame.setVisible(true);
-    //component.startAnimation();
   }
 }
