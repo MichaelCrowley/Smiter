@@ -34,13 +34,13 @@ public class Character extends JPanel{
     hitbox = new Rectangle(currPosition, size);
   }
 
-  private boolean healtIsGone(){
+  private boolean healthIsGone(){
     return (health<=0);
   }
 
   private void takeDamage(){
     health--;
-    //if(healtIsGone())
+    //if(healthIsGone())
       //die(attack_anim);
   }
 
@@ -56,7 +56,7 @@ public class Character extends JPanel{
   }
 
   private void loadCurrentImage(){    
-    ImageIcon frame = new ImageIcon("assets/player/adventurer-attack-00.png");
-    currImage = frame.getImage();
+    ImageIcon currframe = new ImageIcon("assets/player/adventurer-attack-00.png");
+    currImage = currframe.getImage();
   }
 }
