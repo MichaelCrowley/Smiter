@@ -5,20 +5,28 @@
  *  This class starts the game.
  */
 import javax.swing.JFrame;
+import java.awt.EventQueue;
 
-public class SmiterViewer{
-  public static void main(String args[]){
-    JFrame frame = new JFrame();
+public class SmiterViewer extends JFrame{
+  final int FRAME_WIDTH = 1000;
+  final int FRAME_HEIGHT = 1000;
 
-    final int FRAME_WIDTH = 1000;
-    final int FRAME_HEIGHT = 1000;
-    frame.setSize(FRAME_WIDTH, FRAME_HEIGHT);
-    frame.setTitle("Smiter");
-    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  public SmiterViewer() {
+    initUI();
+  }
+
+  private void initUI(){
+    setSize(FRAME_WIDTH, FRAME_HEIGHT);
+    setTitle("Smiter");
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     ComponentsHolder component = new ComponentsHolder();
-    frame.add(component);
-    frame.setVisible(true);
-    component.startAnimation();
+    add(component);
+  } 
+  public static void main(String args[]){
+    EventQueue.invokeLater(() -> {
+      JFrame SV = new SmiterViewer();
+      SV.setVisible(true);
+  });
   }
 }
