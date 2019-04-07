@@ -11,10 +11,20 @@ import java.awt.Graphics2D;
 
 public class ComponentsHolder extends JComponent{
   private Background b;
+  private Character player;
   
   public ComponentsHolder() {
     this.setFocusable(true);
     b = new Background();
+    player = new Mirra();
+  }
+
+  public void startAnimation(){
+
+  }
+
+  public void cycle(){
+    
   }
 
 //Draw the board
@@ -22,6 +32,7 @@ public void paintComponent(Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
 
     b.draw(g2);
+    player.draw(g2);
   }
   
 }
