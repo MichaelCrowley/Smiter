@@ -1,32 +1,37 @@
+
 /*
  *  Author: Michael Crowley
  *  Date: 4/7/2019
  * 
  *  This class dictates how all characters sould be set up.
  */
+import java.awt.Dimension;
+import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Point;
 import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 import java.awt.Rectangle;
-public class Character{
-  int health;
-  double speed;
-  Rectangle hitbox;
-  int power;
-  int dimension_x;
-  int dimension_y;
-  private Image currImage;
-  private ImageIcon[] idle_anim;
-  private ImageIcon[] death_anim;
-  private ImageIcon[] attack_anim;
+import java.awt.Toolkit;
+public class Character extends JPanel{
+  public int health;
+  public double speed;
+  public Rectangle hitbox;
+  public int power;
+  public Dimension size;
+  public Image currImage;
+  public ImageIcon[] idle_anim;
+  public ImageIcon[] death_anim;
+  public ImageIcon[] attack_anim;
+  public Point currPosition;
 
   public Character(){
     health = 1;
     speed = 5;
-    dimension_x = 20;
-    dimension_y = 80;
-    hitbox = new Rectangle(0, 0, dimension_x, dimension_y)
     power = 1;
-
+    currPosition = new Point(0, 0);
+    size = new Dimension(20, 80);
+    hitbox = new Rectangle(currPosition, size);
   }
 
   private boolean healtIsGone(){
@@ -35,11 +40,23 @@ public class Character{
 
   private void takeDamage(){
     health--;
-    if(healtIsGone())
-      die();
+    //if(healtIsGone())
+      //die(attack_anim);
   }
 
-  private die(){
+  private void die(ImageIcon[] death){
     
+  }
+
+  public void draw(Graphics2D g2){
+    loadCurrentImage();
+    g2.drawImage(currImage, (int) currPosition.getX(), 
+                  (int) currPosition.getY(), this);
+    Toolkit.getDefaultToolkit().sync();
+  }
+
+  private void loadCurrentImage(){    
+    ImageIcon frame = new ImageIcon("assets/player/adventurer-attack-00.png");
+    currImage = frame.getImage();
   }
 }
