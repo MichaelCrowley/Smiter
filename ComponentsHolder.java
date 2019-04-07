@@ -16,15 +16,13 @@ import java.awt.event.ActionListener;
 import java.util.Scanner;
 
 public class ComponentsHolder extends JComponent implements Runnable{
-  private Background b;
-  private Character player;
+  private Background b = new Background();
+  private Mirra player = new Mirra();
   private Thread animator;
-  private final int DELAY = 25;
+  private final int DELAY = 100;
   
   public ComponentsHolder() {
     this.setFocusable(true);
-    b = new Background();
-    player = new Mirra();
   }
 
   //Draw the board
@@ -36,7 +34,7 @@ public class ComponentsHolder extends JComponent implements Runnable{
     }
 
   public void cycle(){
-
+      player.nextFrame();
   }
 
   @Override
@@ -55,10 +53,12 @@ public class ComponentsHolder extends JComponent implements Runnable{
 
       beforeTime = System.currentTimeMillis();
 
+      //Smiter's run loop
       while(true){
         cycle();
         repaint();
 
+        //Account for completion time of cycle and repaint to keep animations smooth
         timeDiff = System.currentTimeMillis() - beforeTime;
         sleep = DELAY - timeDiff;
 

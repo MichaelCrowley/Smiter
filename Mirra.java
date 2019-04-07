@@ -16,6 +16,9 @@ import java.util.Scanner;
 
 public class Mirra extends Character{
   private String path = "assets/player/adventurer-";
+  private ImageIcon[] idleFrames = new ImageIcon[4];
+  private String currAnimSet = "idle"; 
+  private int frameNum = 0;
   
   public Mirra(){
     this.health = 1;
@@ -24,6 +27,13 @@ public class Mirra extends Character{
     this.currPosition = new Point(500, 500);
     this.size = new Dimension(20, 80);
     this.hitbox = new Rectangle(currPosition, size);
+  }
+  
+  public void nextFrame(){
+    if(frameNum < 3)
+      frameNum++;
+    else
+      frameNum = 0;
   }
 
   public void draw(Graphics2D g2){
@@ -34,7 +44,7 @@ public class Mirra extends Character{
   }
 
   private void loadCurrentImage(){    
-    ImageIcon frame = new ImageIcon(path + "idle-00.png");
+    ImageIcon frame = new ImageIcon(path + currAnimSet + "-0" + this.frameNum + ".png");
     this.currImage = frame.getImage();
   }
 }
