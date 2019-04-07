@@ -21,12 +21,12 @@ public class Background extends JPanel{
 
   //Display image
   public void draw(Graphics2D g2){
-    g2.drawImage(p, 200, 200, this);
+    g2.drawImage(background, 0, 0, this);
     Toolkit.getDefaultToolkit().sync();
   }
 
   private void loadBackground(){    
-    ImageIcon source = new ImageIcon("assets/player/adventurer-idle-00.png");
+    ImageIcon source = new ImageIcon("assets/background.png");
     background = source.getImage();
   }
 }
