@@ -6,4 +6,4 @@ Player character sprites - rvros
 Background Tileset - https://twitter.com/pixel_poem
 Skeleton Sprites - https://twitter.com/Jsf23Art
 
-The assets should be unzioped to a folder path of Smiter/assets/player
+The assets should be unzipped the root folder
