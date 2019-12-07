@@ -27,6 +27,6 @@ public class SmiterViewer extends JFrame{
     EventQueue.invokeLater(() -> {
       JFrame SV = new SmiterViewer();
       SV.setVisible(true);
-  });
+    });
   }
 }
