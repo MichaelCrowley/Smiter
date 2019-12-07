@@ -61,7 +61,7 @@ public class Mirra extends Character{
         frameNum = 0;
     
     if(currAnimSet == "run")
-      if(frameNum < 4)
+      if(frameNum < 5)
         frameNum++;
       else
         frameNum = 0;
